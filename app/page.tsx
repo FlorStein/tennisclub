@@ -9,6 +9,7 @@ const experiences = [
 ];
 
 export default function Home() {
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
   const [menuOpen, setMenuOpen] = useState(false);
   const [formOpen, setFormOpen] = useState(false);
   const [sent, setSent] = useState(false);
@@ -36,7 +37,7 @@ export default function Home() {
         </button>
       </header>
 
-      <section className="hero" id="inicio">
+      <section className="hero" id="inicio" style={{ backgroundImage: `url('${basePath}/images/casa-tilia-hero.png')` }}>
         <div className="hero-shade" />
         <div className="hero-copy">
           <p className="eyebrow">Palermo Chico · Buenos Aires</p>
@@ -61,7 +62,7 @@ export default function Home() {
       </section>
 
       <section className="editorial-grid">
-        <div className="image-tall"><img src="/images/casa-tilia-ritual.png" alt="Raquetas clásicas, toallas y café junto a la cancha" /></div>
+        <div className="image-tall"><img src={`${basePath}/images/casa-tilia-ritual.png`} alt="Raquetas clásicas, toallas y café junto a la cancha" /></div>
         <div className="quote-card">
           <span className="monogram">CT</span>
           <blockquote>“La mejor parte del partido empieza cuando termina.”</blockquote>
