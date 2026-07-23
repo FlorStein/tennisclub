@@ -62,7 +62,7 @@ export default function Home() {
         <div className="hero-shade" />
         <div className="hero-copy">
           <p className="eyebrow">Palermo Chico · Buenos Aires</p>
-          <h1>El arte de<br />pertenecer.</h1>
+          <h1>El placer de<br />jugar.</h1>
           <div className="hero-bottom">
             <p>Tenis, mesa y encuentros<br />bajo las tipas.</p>
             <button className="round-link" onClick={() => setFormOpen(true)}>

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   description: "Un club privado de tenis, mesa y encuentros en Palermo Chico, Buenos Aires.",
   openGraph: {
     title: "Casa Tilia — Tennis & Social Club",
-    description: "El arte de pertenecer. Buenos Aires.",
+    description: "El placer de jugar. Buenos Aires.",
     images: [`${siteUrl}og.png`],
   },
   twitter: { card: "summary_large_image", images: [`${siteUrl}og.png`] },
