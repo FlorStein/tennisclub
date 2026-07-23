@@ -3,9 +3,30 @@
 import { FormEvent, useState } from "react";
 
 const experiences = [
-  { n: "01", title: "Cancha", text: "Cuatro canchas de polvo de ladrillo, dos rápidas y juego hasta la medianoche." },
-  { n: "02", title: "Academia", text: "Entrenamiento privado, clínicas y un programa junior de cupos limitados." },
-  { n: "03", title: "La Mesa", text: "Café desde temprano, almuerzos de temporada y aperitivo al borde de la cancha." },
+  {
+    n: "01",
+    title: "Cancha",
+    kicker: "Juego libre · Competencia",
+    text: "Seis canchas con la superficie verde distintiva de Casa Tilia y juego hasta la medianoche. Vestuarios privados, encordado y pelotas nuevas siempre disponibles.",
+    image: "experience-cancha.png",
+    facts: ["6 canchas", "07:00 — 00:00"],
+  },
+  {
+    n: "02",
+    title: "Academia",
+    kicker: "Técnica · Estrategia",
+    text: "Entrenamiento privado, clínicas y un programa junior de cupos limitados. Un equipo de coaches diseña cada plan según tu juego y tus objetivos.",
+    image: "experience-academia.png",
+    facts: ["Sesiones 1:1", "Todos los niveles"],
+  },
+  {
+    n: "03",
+    title: "La Mesa",
+    kicker: "Cocina · Sobremesa",
+    text: "Café desde temprano, almuerzos de temporada y aperitivo al borde de la cancha. Una carta breve, producto argentino y esa sobremesa que alarga el partido.",
+    image: "experience-mesa.png",
+    facts: ["Cocina de estación", "Mesa hasta las 00:00"],
+  },
 ];
 
 export default function Home() {
@@ -78,7 +99,18 @@ export default function Home() {
         <div className="experience-list">
           {experiences.map((item) => (
             <article key={item.n}>
-              <span>{item.n}</span><h3>{item.title}</h3><p>{item.text}</p><b>↗</b>
+              <div className="experience-image">
+                <img src={`${basePath}/images/${item.image}`} alt={`${item.title} en Casa Tilia`} />
+                <span className="experience-number">{item.n}</span>
+              </div>
+              <div className="experience-copy">
+                <p className="experience-kicker">{item.kicker}</p>
+                <h3>{item.title}</h3>
+                <p className="experience-description">{item.text}</p>
+                <div className="experience-facts">
+                  {item.facts.map((fact) => <span key={fact}>{fact}</span>)}
+                </div>
+              </div>
             </article>
           ))}
         </div>
